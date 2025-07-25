@@ -1,4 +1,4 @@
-#**CS50P-Project:- Tic Tac Toe**    
+# **CS50P-Project:- Tic Tac Toe**    
 my final project for the CS50P Python course.        
 Video Demo:  <URL HERE>        
 Description:     
