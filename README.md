@@ -1,6 +1,7 @@
-**CS50P-Project:- Tic Tac Toe**
-my final project for the CS50P Python course.  
-Video Demo:  <URL HERE>  
+#CS50P-Project:- Tic Tac Toe  
+<ins><ins>
+my final project for the CS50P Python course.    
+Video Demo:  <URL HERE>    
 Description: 
 The Tic Tac Toe Game is a classic two-player game implemented using Python in a simple text-based/console interface. The goal of the game is to provide an interactive experience for two users who take turns to place their symbols (X or O) on a 3×3 grid.
 
