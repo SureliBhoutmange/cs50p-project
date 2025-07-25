@@ -26,14 +26,13 @@ Occupied cells
 
 ### 📁 Project Structure
 
-bash
-Copy
-Edit
-tic_tac_toe/
-│
-├── tic_tac_toe.py         # Main Python script containing the game logic
-├── README.md              # Project overview and usage instructions
-└── requirements.txt       # (Optional) if you add GUI or other libraries
+bash  
+Copy  
+Edit  
+tic_tac_toe/  
+**1.**project.py             # Main Python script containing the game logic
+**2.**README.md              # Project overview and usage instructions
+**3.**requirements.txt       # (Optional) if you add GUI or other libraries
 
 ### 🧠 How It Works
 
@@ -56,10 +55,10 @@ Library	Purpose: Built-in is Used for input/output, loops, logic
 
 ### ✅ Standard Python Features Used:
 
-print() – to display the game board
-input() – to take user input
-int() – to convert string input to integers
-list – to represent the game board
-if/else, while, for – for control flow and logic
+print() – to display the game board  
+input() – to take user input  
+int() – to convert string input to integers  
+list – to represent the game board  
+if/else, while, for – for control flow and logic  
 
 
