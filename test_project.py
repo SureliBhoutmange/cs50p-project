@@ -1,5 +1,6 @@
 import project
 
+
 def test_check_for_win():
 
     board = {
@@ -20,15 +21,17 @@ def test_check_for_draw():
     assert project.Check_For_Draw(board) == True
     print("test_check_for_draw passed.")
 
-def test_insert():
+def test_insert(monkeypatch):
 
-    board = {
-        1: "", 2: "", 3: "",
-        4: "", 5: "", 6: "",
-        7: "", 8: "", 9: "" 
-    }
-    project.insert("X", 1, board)
-    assert board[1] == "X"
+    board = {i: "" for i in range(1, 10)}
+    board[1] == "X"
+
+    inputs = iter(["1", "2"])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    project.insert("0", 1, board)
+
+    assert board[2] == "0"
     print("test_insert passed.")
 
 
