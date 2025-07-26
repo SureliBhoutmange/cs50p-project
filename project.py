@@ -1,7 +1,7 @@
 import pyfiglet
 
 def message():
-    welcome_text = pyfiglet.figlet_format("welcome to Tic Tac Toe")
+    welcome_text = pyfiglet.figlet_format("welcome to Tic Tac Toe Game")
     print(welcome_text)
 
 def main():

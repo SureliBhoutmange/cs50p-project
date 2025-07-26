@@ -54,5 +54,5 @@ class TestTicTacToe(unittest.TestCase):
         self.board[3] = "X"
         self.assertFalse(Check_For_Win("X", self.board))
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     unittest.main()
