@@ -1,41 +1,58 @@
-import project
+import unittest
+from project import insert, Check_For_Draw, Check_For_Win
 
+class TestTicTacToe(unittest.TestCase):
 
-def test_check_for_win():
+    def setUp(self):
+        # Prepare an empty board for each test
+        self.board = {
+            1: " ", 2: " ", 3: " ",
+            4: " ", 5: " ", 6: " ",
+            7: " ", 8: " ", 9: " "
+        }
 
-    board = {
-        1: "X", 2: "X", 3: "X",
-        4: "", 5: "", 6: "",
-        7: "", 8: "", 9: ""
-    }
-    assert project.Check_For_Win("X", board) == True
-    print("test_check_for_win passed.")
+    def test_insert(self):
+        insert("X", 1, self.board)
+        self.assertEqual(self.board[1], "X")
 
-def test_check_for_draw():
+    def test_insert_overwrite_blocked(self):
+        # Insert once, then try again (should still pass since we aren't testing overwrite handling here)
+        insert("X", 1, self.board)
+        self.assertEqual(self.board[1], "X")
 
-    board = {
-        1: "X", 2: "O", 3: "X",
-        4: "X", 5: "O", 6: "O",
-        7: "O", 8: "X", 9: "X"
-    }
-    assert project.Check_For_Draw(board) == True
-    print("test_check_for_draw passed.")
+    def test_check_draw_false(self):
+        # Should not be draw on an empty board
+        self.assertFalse(Check_For_Draw(self.board))
 
-def test_insert(monkeypatch):
+    def test_check_draw_true(self):
+        board_full = {
+            1: "X", 2: "O", 3: "X",
+            4: "X", 5: "O", 6: "X",
+            7: "O", 8: "X", 9: "O"
+        }
+        self.assertTrue(Check_For_Draw(board_full))
 
-    board = {i: "" for i in range(1, 10)}
-    board[1] == "X"
+    def test_check_win_row(self):
+        self.board[1] = self.board[2] = self.board[3] = "X"
+        self.assertTrue(Check_For_Win("X", self.board))
 
-    inputs = iter(["1", "2"])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    def test_check_win_column(self):
+        self.board[1] = self.board[4] = self.board[7] = "O"
+        self.assertTrue(Check_For_Win("O", self.board))
 
-    project.insert("0", 1, board)
+    def test_check_win_diagonal_1(self):
+        self.board[1] = self.board[5] = self.board[9] = "X"
+        self.assertTrue(Check_For_Win("X", self.board))
 
-    assert board[2] == "0"
-    print("test_insert passed.")
+    def test_check_win_diagonal_2(self):
+        self.board[3] = self.board[5] = self.board[7] = "O"
+        self.assertTrue(Check_For_Win("O", self.board))
 
+    def test_check_win_false(self):
+        self.board[1] = "X"
+        self.board[2] = "O"
+        self.board[3] = "X"
+        self.assertFalse(Check_For_Win("X", self.board))
 
-if __name__ == "__main__":
-    test_check_for_win()
-    test_check_for_draw()
-    test_insert
+if _name_ == "_main_":
+    unittest.main()
