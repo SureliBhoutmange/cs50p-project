@@ -29,25 +29,25 @@ Occupied cells
 bash  
 Copy  
 Edit  
-tic_tac_toe/  
-**1.**project.py             # Main Python script containing the game logic
-**2.**README.md              # Project overview and usage instructions
-**3.**requirements.txt       # (Optional) if you add GUI or other libraries
+tic_tac_toe/    
+**1.** project.py             # Main Python script containing the game logic  
+**2.** README.md              # Project overview and usage instructions  
+**3.** requirements.txt       # (Optional) if you add GUI or other libraries  
 
 ### 🧠 How It Works
 
 Game Board Representation:
-The game board is represented using a list of 9 elements (or a 3x3 nested list).
-Empty spaces are initially numbered 1 to 9 for easy reference.
-Player Input:
-Players are prompted to enter the position where they want to place their mark.
-The input is checked for validity before updating the board.
-**1.****Move Validation:
-The program checks if the input is a number between 1–9 and whether the chosen cell is empty.
-**2.**Win Checking Logic:
-After each move, the game checks all possible winning combinations (rows, columns, diagonals).
-**3.**Draw Condition:
-If the board is full and no winner is detected, the game declares a draw.
+The game board is represented using a list of 9 elements (or a 3x3 nested list).  
+Empty spaces are initially numbered 1 to 9 for easy reference.  
+Player Input:  
+Players are prompted to enter the position where they want to place their mark.  
+The input is checked for validity before updating the board.  
+**1.** Move Validation:  
+The program checks if the input is a number between 1–9 and whether the chosen cell is empty.  
+**2.** Win Checking Logic:  
+After each move, the game checks all possible winning combinations (rows, columns, diagonals).  
+**3.** Draw Condition:  
+If the board is full and no winner is detected, the game declares a draw.  
 
 ### ✅ Libraries Used (Console Version)
 
