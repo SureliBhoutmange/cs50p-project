@@ -1,14 +1,21 @@
 import unittest
 from project import insert, Check_For_Draw, Check_For_Win
 
+
 class TestTicTacToe(unittest.TestCase):
 
     def setUp(self):
         # Prepare an empty board for each test
         self.board = {
-            1: " ", 2: " ", 3: " ",
-            4: " ", 5: " ", 6: " ",
-            7: " ", 8: " ", 9: " "
+            1: " ",
+            2: " ",
+            3: " ",
+            4: " ",
+            5: " ",
+            6: " ",
+            7: " ",
+            8: " ",
+            9: " ",
         }
 
     def test_insert(self):
@@ -26,9 +33,15 @@ class TestTicTacToe(unittest.TestCase):
 
     def test_check_draw_true(self):
         board_full = {
-            1: "X", 2: "O", 3: "X",
-            4: "X", 5: "O", 6: "X",
-            7: "O", 8: "X", 9: "O"
+            1: "X",
+            2: "O",
+            3: "X",
+            4: "X",
+            5: "O",
+            6: "X",
+            7: "O",
+            8: "X",
+            9: "O",
         }
         self.assertTrue(Check_For_Draw(board_full))
 
@@ -53,6 +66,7 @@ class TestTicTacToe(unittest.TestCase):
         self.board[2] = "O"
         self.board[3] = "X"
         self.assertFalse(Check_For_Win("X", self.board))
+
 
 if __name__ == "__main__":
     unittest.main()
